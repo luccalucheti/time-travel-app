@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viagem no Tempo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container">
-        <h1>Viagem no Tempo</h1>
-        <form action="/submit" method="POST">
-            <label for="name">Nome Completo:</label>
-            <input type="text" id="name" name="name" required>
+    <div id="language-select" class="language-container">
+        <h2>Selecione seu idioma</h2>
+        <div class="buttons">
+            <button class="language-button" onclick="setLanguage('pt')">Português</button>
+            <button class="language-button" onclick="setLanguage('en')">Inglês</button>
+        </div>
+    </div>
 
-            <label for="year">Ano de Destino:</label>
-            <input type="number" id="year" name="year" required>
+    <!-- Portal com interatividade -->
+    <div class="portal-container" style="display: none;" onclick="showForm()">
+        <img src="static/img/portal-image.png" alt="Portal" class="portal">
+        <span class="portal-text">Iniciar</span>
+    </div>
 
-            <label for="reason">Motivo da Viagem:</label>
-            <textarea id="reason" name="reason" required></textarea>
-
-            <button type="submit">Enviar</button>
+    <!-- Formulário escondido -->
+    <div id="form" style="display: none;">
+        <h1 id="form-title">Viagem no Tempo</h1>
+        <form>
+            <label id="name-label" for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name" required><br>
+    
+            <label id="year-label" for="year">Ano de Destino:</label>
+            <input type="number" id="year" name="year" required><br>
+    
+            <label id="reason-label" for="reason">Motivo da Viagem:</label>
+            <textarea id="reason" name="reason" required></textarea><br>
+    
+            <button id="submit-button" type="submit">Enviar</button>
         </form>
     </div>
+
+    <script src="../static/js/script.js"></script>
 </body>
 </html>
