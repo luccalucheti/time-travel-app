@@ -40,5 +40,5 @@ function setLanguage(language) {
 function showForm() {
     document.querySelector('.portal-container').style.display = 'none';
     document.querySelector('.dialog').style.display = 'none';
-    document.getElementById('form').style.display = 'block';
+    document.getElementById('form-container').style.display = 'block';
 }

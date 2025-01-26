@@ -238,11 +238,90 @@ body {
     opacity: 1; /* Faz o texto "Iniciar" aparecer */
 }
 
-#form{
-    border: 2px green solid;
+input[type="radio"] {
+    display: none;
+}
+input[type="checkbox"] {
+    display: none;
+}
+
+.alternatives-container {
+    display: flex;
+    flex-direction: column;
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Cursor de clique */
+}
+
+#alternatives{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo ao selecionar a alternativa */
+input[type="radio"]:checked + .radio-container {
+    background-color: #00ff00; /* Fundo verde ao selecionar */
+    color: black; /* Texto preto ao selecionar */
+}
+/* Estilo ao selecionar a alternativa */
+input[type="checkbox"]:checked + .checkbox-container {
+    background-color: #00ff00; /* Fundo verde ao selecionar */
+    color: black; /* Texto preto ao selecionar */
+}
+/* Efeito ao passar o mouse */
+.checkbox-container:hover {
+    background-color: #333; /* Leve alteração ao passar o mouse */
+}
+
+
+#form-container{
+    border: solid 2px green;
+    display: flex;
+    padding: 1vw;
+    flex-direction: column;
+    color: white;
+    font-size: 10px;
+    width: 80vw;
+    height: 36vw;
 }
 
 #form-title{
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
     color: white;
     font-family:'Orbitron', sans-serif;
+    margin-bottom: 1vw;
+}
+
+form{
+    height: 100%;
+    padding-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-form{
+    border: solid 2px green;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    padding: 0px;
+    width: 30vw;
+}
+
+.category-title{
+    border: 1px green solid;
+    font-size: 10px; 
+}
+
+.category-field{
+    border: 1px green solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#alternatives{
+    margin-left: 2vw;
 }

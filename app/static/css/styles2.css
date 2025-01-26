@@ -69,14 +69,14 @@ input[type="checkbox"]:checked + .checkbox-container {
     padding: 1vw;
     flex-direction: column;
     color: white;
-    font-size: 0.8vw;
+    font-size: 10px;
     width: 80vw;
     height: 36vw;
 }
 
 #form-title{
     width: 100%;
-    font-size: 0.8vw;
+    font-size: 10px;
     text-align: center;
     color: white;
     font-family:'Orbitron', sans-serif;
@@ -97,11 +97,12 @@ form{
     flex-direction: column;
     margin-top: 0px;
     padding: 0px;
+    width: 30vw;
 }
 
 .category-title{
     border: 1px green solid;
-    font-size: 1vw; 
+    font-size: 10px; 
 }
 
 .category-field{
@@ -109,4 +110,8 @@ form{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+#alternatives{
+    margin-left: 2vw;
 }
