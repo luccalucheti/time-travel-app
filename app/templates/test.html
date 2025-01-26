@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem no Tempo</title>
+    <link rel="stylesheet" href="../static/css/styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="screen">
+        <div id="form-container">
+            <h1 id="form-title">O seguinte formulário tem o objetivo de definir o escolhido para fazer a primeira experiência com viagem no tempo em humanos. A máquina desenvolvida por nós, da SensorVille, é capaz de viajar 50 anos, seja para o passado, ou para o futuro. A viagem funcionará da seguinte maneira: Você escolherá uma data, irá passar 365 dias no tempo escolhido, e então irá retornar a este ponto temporal. É importante enfatizar que suas escolhas terão impacto na nossa linha temporal, portanto, seja cuidadoso ao mudar fatos passados, e ao pegar informações do futuro. Seja criativo, e utilize o seu poder de persuasão para nos convencer de que você deve ser o escolhido.</h1>
+            <form>
+                <div class="category-form" id="basic-info">
+
+                    <h2 class="category-title">informações Básicas</h2>
+
+                    <div class="category-field">
+                        <label for="name" id="name-label">Nome Completo:</label>
+                        <input type="text" id="name" name="name" required><br>
+                    </div>
+
+                    <div class="category-field">
+                        <label for="age" id="age-label">Idade</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+
+                    <div class="category-field">
+                        <label for="life-condition" id="life-condition-label">Você possui alguma condição de risco de saúde?</label>
+                        <div id="alternatives">
+                            <label class="alternatives-container">
+                                <input type="radio" name="life-condition-option" value="yes">Sim</input>
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="radio" name="life-condition-option" value="no">Não</input>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="category-form" id="creativity">
+
+                    <h2 class="category-title">criatividade</h2>
+                    
+                    <div class="category-field">
+                        <label id="year-label" for="year">Ano de Destino:</label>
+                        <input type="number" id="year" name="year" required><br>
+                    </div>
+
+                    <div class="category-field">
+                        <label id="objective-label" for="objective">Descreva de forma breve o seu principal objetivo nessa viagem.</label>
+                        <input type="text" id="objective" name="objective" required><br>
+                    </div>
+
+                    <div class="category-field">
+                        <label id="objects-label" for="objects">Escolha um dos objetos para levar com você:</label>
+                        <div id="alternatives">
+                            <label class="alternatives-container">
+                                <input type="radio" name="object-option" value="book">Um livro histórico
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="radio" name="object-option" value="device">Um aparelho tecnológico avançado
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="radio" name="object-option" value="relic">Uma relíquia pessoal
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="radio" name="object-option" value="tool">Uma ferramenta multifuncional
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="category-field">
+                        <label for="yourself" id="yourself-label">Se, na viagem temporal, você encontrasse você mesmo, o que você faria?</label>
+                        <input type="text" id="yourself" name="yourself" required><br>
+                    </div>
+
+                </div>
+
+
+
+                <div class="category-form" id="fitness">
+
+                    <h2 class="category-title">Aptidão</h2>
+
+                    <div class="category-field">
+                        <label id="fitness-label" for="fitness">Você se considera apto para alguma(s) das seguintes categorias?</label>
+                        <div id="alternatives">
+                            <label class="alternatives-container">
+                                <input type="checkbox" name="fitness-option" value="comunication">Comunicação e persuasão</input>
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="checkbox" name="fitness-option" value="engineering">Resolução de problemas mecânicos/tecnológicos</input>
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="checkbox" name="fitness-option" value="physical">Fisicamente apto para atividades intensas</input>
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="checkbox" name="fitness-option" value="cooking">Cozinhar e encontrar comida</input>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="category-field">
+                        <label for="children" id="children-label">Você possui algum filho/dependente?</label>
+                        <div id="alternatives">
+                            <label class="alternatives-container">
+                                <input type="radio" name="children-option" value="yes">Sim</input>
+                            </label>
+                            <label class="alternatives-container">
+                                <input type="radio" name="children-option" value="no">Não</input>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="category-field">
+                        <label for="fear" id="fear-label">Descreva seu maior medo em relação a viajar no tempo.</label>
+                        <input type="text" id="fear" name="fear" required><br>
+                    </div>
+
+                </div>
+        
+                <button id="submit-button" type="submit">Enviar</button>
+
+            </form>
+        </div>
+    </div>
+</body>

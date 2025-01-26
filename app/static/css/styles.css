@@ -1,5 +1,7 @@
 * {
-    box-sizing: border-box;
+    margin: 0; /* Remove todas as margens padrão */
+    padding: 0; /* Remove todo o preenchimento padrão */
+    box-sizing: border-box; /* Garante que o tamanho inclua bordas e padding */
 }
 
 /* Estilização do corpo e fundo */
@@ -234,6 +236,10 @@ body {
 
 .portal-container:hover .portal-text {
     opacity: 1; /* Faz o texto "Iniciar" aparecer */
+}
+
+#form{
+    border: 2px green solid;
 }
 
 #form-title{
