@@ -3,118 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viagem no Tempo</title>
+    <title>Formulário SensorVille</title>
     <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="shortcut icon" href="../static/img/cybersecurity.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
     <div id="screen">
-
+        <!-- Linhas delimitadoras para efeito visual -->
         <div class="line" id="topline"></div>
         <div class="line" id="botline"></div>
         <div class="line" id="leftline"></div>
         <div class="line" id="rightline"></div>
-        
-        <img id="gif1" src="../static/img/gif1.gif" alt="gif1">
+
+        <!-- Pequenos gifs nas pontas superiores esquerda e direita. -->
         <img id="gif2" src="../static/img/gif2.gif" alt="gif2">
         <img id="gif3" src="../static/img/gif3.gif" alt="gif3">
-        <img id="img1" src="../static/img/img1.jpg" alt="img1">
         <div id="language-select" class="language-container">
-            <h2>Selecione seu idioma</h2>
+            <h2>Selecione seu idioma / Select your language</h2>
+            <!-- Botões para seleção de língua, ao serem clicados disparam uma função no js. -->
             <div class="buttons">
                 <button class="language-button" onclick="setLanguage('pt')">Português</button>
-                <button class="language-button" onclick="setLanguage('en')">Inglês</button>
+                <button class="language-button" onclick="setLanguage('en')">English</button>
             </div>
         </div>
 
-
+        <!-- Texto da segunda tela. Inicia invisível (display:none), e aparece no final da função setLanguage() -->
         <div id="dialog-container" class="dialog" style="display: none;">
             <p id="dialog-text"></p>
         </div>
 
-        <!-- Portal com interatividade -->
-        <div class="portal-container" style="display: none;" onclick="showForm()">
-            <img src="../static/img/portal-image.png" alt="Portal" class="portal">
-            <span class="portal-text">Iniciar</span>
+        <!-- Portal com interatividade, ao final do texto ele cresce, e ao ser clicado dispara a função showForm(). -->
+        <div class="start-button-container" style="display: none;" onclick="showForm()">
+            <img src="../static/img/start_button.gif" alt="start-button" class="start-button">
+            <span id="start" class="start-button-text"></span>
         </div>
-        <div id="form-container">
 
+        <!-- Container principal do Formulário. -->
+        <div id="form-container">
             <div id="form-content" style="display: none;">
-                <h1 id="form-title">Bem-vindo ao Terminal Sentinel, você está acessando uma área de segurança máxima.<br>Para restaurar o sistema, precisamos de indivíduos altamente qualificados para investigar e neutralizar o problema. Sua missão será participar do Projeto Sentinel, que visa recuperar dados corrompidos, proteger a rede contra ataques, e restaurar a funcionalidade do SCS.
-                Complete o formulário a seguir para demonstrar suas habilidades e qualificações. Apenas os candidatos mais adequados serão selecionados para essa operação crítica.</h1>
-                <form>
+
+            <!-- Conteúdo do formulário, dividido em título (texto inicial) e o corpo. -->
+
+                <h1 id="form-title"></h1>
+                <form action="/submit" method="POST" enctype="multipart/form-data">
+
+                    <!-- O form é dividido em 3 "linhas" e depois o botão de submit. Cada linha é um agrupamento de perguntas da mesma categoria. Cada linha inicia com o gif do globo à esquerda e depois o corpo da categoria à direita. -->
+
                     <div class="form-line">
+
                         <img class="globe" src="../static/img/gif2.gif" alt="globe">
 
                         <div class="category-form" id="basic-info">
 
-                            <div class="category-title">
-                                <h2>Informações Básicas</h2>
+                            <!-- A classe "category form diz respeito ao corpo da categoria, ao lado do gif. Elas são compostas pelo título da categoria, e depois as divs de classe "category field". Cada um deste representa uma pergunta do form. -->
+
+                            <div class="category-title"> <!-- Título da categoria 1. -->
+                                <h2 id="category-title1"></h2>
                             </div>
 
-                            <div class="category-field">
-                                <label for="name" id="name-label">Nome Completo:</label>
+                            <div class="category-field"> <!-- Campo da categoria 1. -->
+                                <label for="name" id="name-label"></label>
                                 <div class="typing-alternatives"><input type="text" spellcheck="false" id="name" name="name" required></div>
                             </div>
 
-                            <div class="category-field">
-                                <label for="age" id="age-label">Idade:</label>
+                            <div class="category-field"> <!-- Campo da categoria 1. -->
+                                <label for="age" id="age-label"></label>
                                 <div class="typing-alternatives"><input type="number" id="age" name="age" required></div>
                             </div>
 
-                            <div class="category-field">
-                                <label>Você já teve experiência profissional em áreas relacionadas a desenvolvimento de software ou segurança cibernética?</label>
+                            <div class="category-field"> <!-- Campo da categoria 1 (multipla escolha). -->
+                                <label id="multi-choice-quest1"></label>
                                 <div id="alternatives">
                                     <input id="alt1-1" type="radio" name="under-pressure-experience" value="yes">
-                                    <label for="alt1-1" class="alternatives-inputs">Sim</label>
+                                    <label id="opt1-1" for="alt1-1" class="alternatives-inputs"></label>
                                 
                                     <input id="alt1-2" type="radio" name="under-pressure-experience" value="no">
-                                    <label for="alt1-2" class="alternatives-inputs">Não</label>
+                                    <label id="opt1-2" for="alt1-2" class="alternatives-inputs"></label>
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
-
+                     <!-- Segunda linha, tudo se repete. Primeiro o gif do globo, depois o corpo da categoria, contendo 1 título e alguns campos de categoria. -->
                     <div class="form-line">
                         <img class="globe" src="../static/img/gif2.gif" alt="globe">
 
                         <div class="category-form" id="fitness">
 
-                            <div class="category-title">
-                                <h2>Aptidão</h2>
+                            <div class="category-title"> <!-- Título da categoria 2. -->
+                                <h2 id="category-title2"></h2>
                             </div>
 
-                            <div class="category-field">
-                                <label>Você se considera apto para alguma(s) das seguintes categorias?</label>
+                            <div class="category-field"> <!-- Campo da categoria 2. -->
+                                <label id="multi-choice-quest2"></label>
                                 <div id="alternatives">
                                     <input id="alt2-1" type="checkbox" name="fitness-option" value="log">
-                                    <label for="alt2-1" class="alternatives-inputs">Análise de logs e dados.</label>
+                                    <label id="opt2-1" for="alt2-1" class="alternatives-inputs"></label>
                                     <input id="alt2-2" type="checkbox" name="fitness-option" value="decoding">
-                                    <label for="alt2-2" class="alternatives-inputs">Decodificação de mensagens criptografadas.</label>
+                                    <label id="opt2-2" for="alt2-2" class="alternatives-inputs"></label>
                                     <input id="alt2-3" type="checkbox" name="fitness-option" value="protocol">
-                                    <label for="alt2-3" class="alternatives-inputs">Implementação de protocolos de segurança.</label>
+                                    <label id="opt2-3" for="alt2-3" class="alternatives-inputs"></label>
                                     <input id="alt2-4" type="checkbox" name="fitness-option" value="network">
-                                    <label for="alt2-4" class="alternatives-inputs">Gerenciamento de redes.</label>
+                                    <label id="opt2-4" for="alt2-4" class="alternatives-inputs"></label>
                                 </div>
                             </div>
                         
-                            <div class="category-field">
-                                <label>Você já participou de um evento ou competição de cibersegurança?</label>
+                            <div class="category-field"> <!-- Campo da categoria 2. -->
+                                <label id="multi-choice-quest3"></label>
                                 <div id="alternatives">
                                     <input name="cybersecurity-event" id="alt3-1" type="radio" value="yes">
-                                    <label for="alt3-1" class="alternatives-inputs">Sim</label>
+                                    <label id="opt3-1" for="alt3-1" class="alternatives-inputs"></label>
                                     <input name="cybersecurity-event" id="alt3-2" type="radio" value="no">
-                                    <label for="alt3-2" class="alternatives-inputs">Não</label>
+                                    <label id="opt3-2" for="alt3-2" class="alternatives-inputs"></label>
                                 </div>
                             </div>
 
-                            <div class="category-field">
-                                <label>Projete um sistema para proteger uma rede de sensores críticos de invasões externas. Envie um diagrama do sistema.</label>
-                                <label class="file-dropzone" for="file-upload" class="file-label">Insira um arquivo.</label>
+                            <div class="category-field"> <!-- Campo da categoria 2. -->
+                                <label id="file-upload-quest"></label>
+                                <label id="file-upload-label" class="file-dropzone" for="file-upload" class="file-label"></label>
                                 <input type="file" id="file-upload" name="file-upload" accept="image/*,application/pdf">
                             </div>
                         </div>
@@ -125,42 +134,44 @@
 
                         <div class="category-form" id="creativity">
 
-                            <div class="category-title">
-                                <h2>criatividade</h2>
+                            <div class="category-title"> <!-- Título da categoria 3. -->
+                                <h2 id="category-title3"></h2>
                             </div>
                             
-                            <div class="category-field">
-                                <label id="compromised-node-label" for="compromised-node">Você descobre que um nó da rede foi comprometido, expondo sensores críticos a invasões. Quais medidas você tomaria?</label>
+                            <div class="category-field"> <!-- Campo da categoria 3. -->
+                                <label id="compromised-node-label" for="compromised-node"></label>
                                 <textarea spellcheck="false" id="compromised-node" name="compromised-node" rows="4" required></textarea>
                             </div>
 
-                            <div class="category-field">
-                                <label id="improve-security-label" for="improve-security">Se você pudesse desenvolver qualquer ferramenta para aprimorar a segurança cibernética, qual seria e como funcionaria?</label>
+                            <div class="category-field"> <!-- Campo da categoria 3. -->
+                                <label id="improve-security-label" for="improve-security"></label>
                                 <textarea spellcheck="false" id="improve-security" name="improve-security" rows="4"></textarea>
                             </div>
 
-                            <div class="category-field">
-                                <label>Quais destes itens você usaria para configurar uma rede segura?</label>
+                            <div class="category-field"> <!-- Campo da categoria 3. -->
+                                <label id="multi-choice-quest4"></label>
                                 <div id="alternatives">
                                     <input id="alt4-1" type="radio" name="item-option" value="book">
-                                    <label for="alt4-1" class="alternatives-inputs">Firewall baseado em IA.</label>
+                                    <label id="opt4-1" for="alt4-1" class="alternatives-inputs"></label>
                                     <input id="alt4-2" type="radio" name="item-option" value="device">
-                                    <label for="alt4-2" class="alternatives-inputs">Redes privadas virtuais (VPNs).</label>
+                                    <label id="opt4-2" for="alt4-2" class="alternatives-inputs"></label>
                                     <input id="alt4-3" type="radio" name="item-option" value="relic">
-                                    <label for="alt4-3" class="alternatives-inputs">Segmentação de rede.</label>
+                                    <label id="opt4-3" for="alt4-3" class="alternatives-inputs"></label>
                                     <input id="alt4-4" type="radio" name="item-option" value="tool">
-                                    <label for="alt4-4" class="alternatives-inputs">Sensores de intrusão.</label>
+                                    <label id="opt4-4" for="alt4-4" class="alternatives-inputs"></label>
                                 </div>
                             </div>
 
-                            <div class="category-field">
-                                <label for="real-time-programming" id="real-time-programming-label">Explique como lidaria com uma equipe que tem dificuldade em identificar e corrigir falhas críticas em tempo real.</label>
+                            <div class="category-field"> <!-- Campo da categoria 3. -->
+                                <label for="real-time-programming" id="real-time-programming-label"></label>
                                 <textarea spellcheck="false" id="real-time-programming" name="real-time-programming" rows="4" required></textarea>
                             </div>
 
                         </div>
                     </div>
-                    <button id="submit-button" type="submit">Enviar</button>
+                    
+                     <!-- Botão de submit. -->
+                    <button id="submit-button" type="submit"></button>
 
                 </form>
             </div>

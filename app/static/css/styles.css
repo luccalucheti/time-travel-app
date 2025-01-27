@@ -1,3 +1,5 @@
+/* 1- ESTILIZAÇÕES GERAIS */
+
 * {
     margin: 0; /* Remove todas as margens padrão */
     padding: 0; /* Remove todo o preenchimento padrão */
@@ -5,22 +7,28 @@
     font-family: "Courier New", Courier, monospace;
 }
 
-/* Estilização do corpo e fundo */
 body {
     margin: 0px;
     cursor: default;
+    background-image: url("../img/background-hacker.gif");
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 h1{ 
     font-weight: 400;
 }
 h2{
-    font-size: 14px;
+    font-size: .8vw;
     font-weight: 400;
 }
+
+
+
+/* 2- LINHAS E GIFS */
+/* As linhas foram feitas com divs unidimensionais. */
 
 .line{
     position: absolute;
@@ -42,105 +50,97 @@ h2{
 #leftline{
     height: 20vh;
     top: 40vh;
-    left: 4vw;
+    left: 10vw;
 }
 
 #rightline{
     height: 20vh;
     top: 40vh;
-    right: 4vw;
-    transition: right 1s ease;
-}
-
-#img1{
-    position: absolute;
-    max-height: 4vw;
-    bottom: 4.5vw;
-    left: 18.9vw;
-    filter: hue-rotate(90deg); /* Altera a matiz em 90 graus */
-}
-
-#gif1{
-    position: absolute;
-    max-height: 32vh;
-    bottom: 3vw;
-    left: 3vw;
-    filter: hue-rotate(90deg); /* Altera a matiz em 90 graus */
+    right: 10vw;
 }
 
 #gif2{
     position: absolute;
-    max-height: 8vh;
-    top: 5vw;
-    left: 4.5vw;
+    max-width: 4vw;
+    top: 6vw;
+    left: 12vw;
 }
 
 #gif3{
     position: absolute;
     max-width: 4vw;
-    top: 5vw;
-    right: 4.5vw;
+    top: 6vw;
+    right: 11vw;
 }
+
+
+
+
+/* 3- CORPO DO TEXTO */
 
 #screen {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    height: 100%;
-    width: 100vw;
+    height: calc(100vh - 8vw);
+    margin-left: 10vw;
+    margin-top: 4vw;
+    background-color: black;
+    width: 80vw;
     cursor: default;
 }
 
 
+
+
+/* 4- ELEMENTOS DA PRIMEIRA TELA */
 /* Contêiner da seleção de idioma */
 .language-container {
     display: flex;
     flex-direction: column;
+    width: 50vw;
+    height: 10vw;
     border: 2px rgb(0, 255, 0, 1) solid;
+    align-items: center;
     text-align: center;
-    color: white;
+    justify-content: space-around;
+    color: rgb(0, 255, 0, 1);
     background-color: black;
     padding: 14px 40px;
-    border-radius: 15px; /* Cantos arredondados */
     box-shadow: 4px 4px 3px rgba(30, 30, 30, 1); /* Adiciona uma sombra para destaque */
+    min-height: 10rem;
+}
+.language-container h2{
+    font-size: 1.6vw;
 }
 
 /* Botões */
 .buttons {
+    width: 30vw;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 14px;
     margin-top: 14px;
+    gap: 8vw;
 }
 
 /* Estilo base dos botões */
 .language-button {
     /*background: linear-gradient(145deg, #e4c580, #b88b2d);  Textura dourada */
+    width: 20vw;
+    height: 3vw;
     background: black;
     border: 2px rgb(0, 255, 0, 1) solid;
-    border-radius: 14px;
-    padding: 15px 30px;
+    border-radius: 3px;
     font-size: 1.2rem;
-    color: white;
+    color: rgb(0, 255, 0, 1);
     cursor: pointer;
     text-transform: uppercase;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-@keyframes portal-grow {
-    0% {
-        transform: scale(0); /* Tamanho inicial pequeno */
-        opacity: 0; /* Invisível */
-    }
-    100% {
-        transform: scale(1); /* Tamanho real */
-        opacity: 1; /* Totalmente visível */
-    }
 }
 
 /* Hover: Efeito de faixa branca e crescimento */
@@ -161,22 +161,35 @@ h2{
 }
 
 .language-button:hover {
-    transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
 
+
+
+
+/* 5- ELEMENTOS DA SEGUNDA TELA */
+
+@keyframes start-button-grow {
+    0% {
+        transform: scale(0); /* Tamanho inicial pequeno */
+        opacity: 0; /* Invisível */
+    }
+    100% {
+        transform: scale(1); /* Tamanho real */
+        opacity: 1; /* Totalmente visível */
+    }
+}
+
 /* Caixa de diálogo */
-/* Caixa de diálogo inicial */
+
 .dialog {
-    border: 2px rgb(0, 255, 0, 1) solid;
     position: absolute;
     background-color: rgba(10, 10, 10, .6); /* Cinza escuro translúcido */
-    color: white;
-    border-radius: 15px;
+    color: rgb(0, 255, 0, 1);
     padding: 14px 30px;
-    width: 80vw;
+    width: 60vw;
     text-align: justify;
-    font-size: 1rem;
+    font-size: 18px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5); /* Sombra */
     overflow: hidden;
     z-index: 10;
@@ -186,62 +199,57 @@ h2{
 }
 
 
-/* Texto dentro da caixa */
 .dialog p {
     margin: 0;
     line-height: 1.6;
     white-space: pre-line; /* Mantém quebras de linha */
+    color: rgb(0, 255, 0, 1); /* Define a cor do texto */
 }
 
-/* Centralizar o portal */
-.portal-container {
-    border: 0px rgb(0, 255, 0, 1) solid;
+/* Centralizar o start-button */
+.start-button-container {
     display: none; /* Inicialmente escondido */
-    animation: portal-grow 0.5s ease-out forwards;
+    animation: start-button-grow 0.5s ease-out forwards;
     position: relative;
-    top: 10vh;
-    width: 20vw;
+    top: 15vh;
+    width: 30vw;
     height: 20vw;
     cursor: pointer;
-
     justify-content: center;
     align-items: center;
 }
 
-/* Estilo da imagem do portal */
-.portal {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease, filter 0.5s ease;
+/* Estilo da imagem do start-button */
+.start-button {
+    transition: transform 2s ease, filter 0.5s ease;
     border-radius: 50%;
-    filter: brightness(0.1);
-    filter: hue-rotate(270deg);
 }
 
-/* Texto dentro do portal */
-.portal-text {
+/* Texto dentro do start-button */
+.start-button-text {
     position: absolute;
+    bottom: 3vw;
     font-size: 1rem;
-    color: white;
+    color: rgb(0, 255, 0, 1);
     text-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
     opacity: 0; /* Invisível por padrão */
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
     z-index: 2;
 }
 
 /* Animação no hover */
-.portal-container:hover .portal {
-    transform: scale(1.5) rotate(180deg); /* Gira e aumenta */
-    filter: brightness(1.4); /* Aumenta o brilho */
-    filter: hue-rotate(270deg);
+.start-button-container:hover .start-button {
+    filter: brightness(2); /* Aumenta o brilho */
+    transform: scale(1.2); /* Aumenta o tamanho */
 }
 
-.portal-container:hover .portal-text {
+.start-button-container:hover .start-button-text {
     opacity: 1; /* Faz o texto "Iniciar" aparecer */
 }
 
 
-
+/* 6- ELEMENTOS FORMULÁRIO */
+/* Os atributos 'hover' e 'focus' alteram as caracteristicas do elemento ao passar do mouse e ao receber foco, respectivamente. O foco é recebido se o elemento for clicado, ou se o botão "TAB" for pressionado de forma a mudar o elemento em foco. */
 
 input{
     font-size: 14px;
@@ -276,7 +284,6 @@ input:-webkit-autofill {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Alternativa padrão */
 .alternatives-inputs {
     display: flex;
     align-items: center;
@@ -286,7 +293,6 @@ input:-webkit-autofill {
     transition: all 0.4s ease;
 }
 
-/* Hover */
 .alternatives-inputs:hover {
     background-color: rgba(0, 255, 0, 0.2); /* Fundo verde translúcido */
     border-color: lime; /* Borda brilhante */
@@ -318,6 +324,7 @@ input[type="checkbox"]:checked + .checkbox-container {
     color: black; /* Texto preto ao selecionar */
 }
 
+/* Utilizar textarea ao inves de "input type text" permite personalizar mais o espaço reservado à escrita do usuário. */
 textarea {
     width: 16vw; 
     height: auto;
@@ -386,13 +393,13 @@ textarea::-webkit-scrollbar-track {
     padding: 3vw;
     flex-direction: column;
     color: rgb(0, 255, 0, 1);
-    font-size: 14px;
+    font-size: .8vw;
     width: 78vw;
 }
 
 #form-title{
     width: 100%;
-    font-size: 14px;
+    font-size: 1vw;
     text-align: justify;
     color: rgb(0, 255, 0, 1);
     margin-bottom: 4vw;
@@ -547,13 +554,13 @@ input[type="file"] {
     color: rgb(0, 255, 0, 1);
 }
 
-button{
+button[type="submit"]{
     border: solid 2px rgb(0, 255, 0, 1);
     background-color: black;
     color: rgb(0, 255, 0, 1);
     padding: 0px;
     width: 36vw;
-    height: 100%;
+    height: 2.4vw;
     margin-left: 6vw;
     cursor: pointer;
     transition: all .3s ease;
@@ -566,4 +573,62 @@ button:hover{
 button:focus{
     outline: none;
     box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.5);
+}
+
+/* 7- MUDANÇAS NOS ELEMENTOS PARA TELAS DE PEQUENA LARGURA (SMARTPHONES). */
+
+@media (max-width: 820px) {
+    .language-container {
+        width: 50vw;
+        height: 4vw;
+        min-height: 16rem;
+    }
+    .language-container h2{
+        font-size: 3vw;
+    }
+
+    .container {
+        width: 90%; /* Ajusta a largura */
+        margin: 0 auto; /* Centraliza o conteúdo */
+    }
+
+    .buttons{
+        width: 40vw;
+        gap: 2vw;
+    }
+
+    .language-button {
+        width: 20vw;
+        height: 8vw;
+        font-size: 3vw;
+    }
+    .dialog {
+        padding: 14px 10px;
+        width: 70vw;
+        font-size: 2.4vw;
+    }
+    
+    .dialog p {
+        margin: 0;
+        line-height: 1.2;
+        white-space: pre-line;
+    }
+    .start-button-container {
+        top: 22vh;
+    }
+    #gif2{
+        max-width: 7vw;
+    }
+    
+    #gif3{
+        max-width: 7vw;
+    }
+
+    .start-button-text{
+        bottom: -4vw;
+    }
+
+    button[type="submit"]{
+        height: 4vw;
+    }
 }
