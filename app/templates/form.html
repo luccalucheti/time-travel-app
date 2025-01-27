@@ -12,10 +12,10 @@
 
     <div id="screen">
 
-        <div class="linha" id="linhatop"></div>
-        <div class="linha" id="linhabot"></div>
-        <div class="linha" id="linhaleft"></div>
-        <div class="linha" id="linharight"></div>
+        <div class="line" id="topline"></div>
+        <div class="line" id="botline"></div>
+        <div class="line" id="leftline"></div>
+        <div class="line" id="rightline"></div>
         
         <img id="gif1" src="../static/img/gif1.gif" alt="gif1">
         <img id="gif2" src="../static/img/gif2.gif" alt="gif2">
@@ -39,127 +39,132 @@
             <img src="../static/img/portal-image.png" alt="Portal" class="portal">
             <span class="portal-text">Iniciar</span>
         </div>
+        <div id="form-container">
 
-        <div id="form-container" style="display: none;">
-            <h1 id="form-title">O seguinte formulário tem o objetivo de definir o escolhido para fazer a primeira experiência com viagem no tempo em humanos. A máquina desenvolvida por nós, da SensorVille, é capaz de viajar 50 anos, seja para o passado, ou para o futuro. A viagem funcionará da seguinte maneira: Você escolherá uma data, irá passar 365 dias no tempo escolhido, e então irá retornar a este ponto temporal. É importante enfatizar que suas escolhas terão impacto na nossa linha temporal, portanto, seja cuidadoso ao mudar fatos passados, e ao pegar informações do futuro. Seja criativo, e utilize o seu poder de persuasão para nos convencer de que você deve ser o escolhido.</h1>
-            <form>
-                <div class="category-form" id="basic-info">
+            <div id="form-content" style="display: none;">
+                <h1 id="form-title">Bem-vindo ao Terminal Sentinel, você está acessando uma área de segurança máxima.<br>Para restaurar o sistema, precisamos de indivíduos altamente qualificados para investigar e neutralizar o problema. Sua missão será participar do Projeto Sentinel, que visa recuperar dados corrompidos, proteger a rede contra ataques, e restaurar a funcionalidade do SCS.
+                Complete o formulário a seguir para demonstrar suas habilidades e qualificações. Apenas os candidatos mais adequados serão selecionados para essa operação crítica.</h1>
+                <form>
+                    <div class="form-line">
+                        <img class="globe" src="../static/img/gif2.gif" alt="globe">
 
-                    <h2 class="category-title">informações Básicas</h2>
+                        <div class="category-form" id="basic-info">
 
-                    <div class="category-field">
-                        <label for="name" id="name-label">Nome Completo:</label>
-                        <input type="text" id="name" name="name" required><br>
-                    </div>
+                            <div class="category-title">
+                                <h2>Informações Básicas</h2>
+                            </div>
 
-                    <div class="category-field">
-                        <label for="age" id="age-label">Idade</label>
-                        <input type="number" id="age" name="age" required>
-                    </div>
+                            <div class="category-field">
+                                <label for="name" id="name-label">Nome Completo:</label>
+                                <div class="typing-alternatives"><input type="text" spellcheck="false" id="name" name="name" required></div>
+                            </div>
 
-                    <div class="category-field">
-                        <label for="life-condition" id="life-condition-label">Você possui alguma condição de risco de saúde?</label>
-                        <div id="alternatives">
-                            <label class="alternatives-container">
-                                <input type="radio" name="life-condition-option" value="yes">Sim</input>
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="radio" name="life-condition-option" value="no">Não</input>
-                            </label>
+                            <div class="category-field">
+                                <label for="age" id="age-label">Idade:</label>
+                                <div class="typing-alternatives"><input type="number" id="age" name="age" required></div>
+                            </div>
+
+                            <div class="category-field">
+                                <label>Você já teve experiência profissional em áreas relacionadas a desenvolvimento de software ou segurança cibernética?</label>
+                                <div id="alternatives">
+                                    <input id="alt1-1" type="radio" name="under-pressure-experience" value="yes">
+                                    <label for="alt1-1" class="alternatives-inputs">Sim</label>
+                                
+                                    <input id="alt1-2" type="radio" name="under-pressure-experience" value="no">
+                                    <label for="alt1-2" class="alternatives-inputs">Não</label>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
-                </div>
 
+                    <div class="form-line">
+                        <img class="globe" src="../static/img/gif2.gif" alt="globe">
 
+                        <div class="category-form" id="fitness">
 
-                <div class="category-form" id="creativity">
+                            <div class="category-title">
+                                <h2>Aptidão</h2>
+                            </div>
 
-                    <h2 class="category-title">criatividade</h2>
-                    
-                    <div class="category-field">
-                        <label id="year-label" for="year">Ano de Destino:</label>
-                        <input type="number" id="year" name="year" required><br>
+                            <div class="category-field">
+                                <label>Você se considera apto para alguma(s) das seguintes categorias?</label>
+                                <div id="alternatives">
+                                    <input id="alt2-1" type="checkbox" name="fitness-option" value="log">
+                                    <label for="alt2-1" class="alternatives-inputs">Análise de logs e dados.</label>
+                                    <input id="alt2-2" type="checkbox" name="fitness-option" value="decoding">
+                                    <label for="alt2-2" class="alternatives-inputs">Decodificação de mensagens criptografadas.</label>
+                                    <input id="alt2-3" type="checkbox" name="fitness-option" value="protocol">
+                                    <label for="alt2-3" class="alternatives-inputs">Implementação de protocolos de segurança.</label>
+                                    <input id="alt2-4" type="checkbox" name="fitness-option" value="network">
+                                    <label for="alt2-4" class="alternatives-inputs">Gerenciamento de redes.</label>
+                                </div>
+                            </div>
+                        
+                            <div class="category-field">
+                                <label>Você já participou de um evento ou competição de cibersegurança?</label>
+                                <div id="alternatives">
+                                    <input name="cybersecurity-event" id="alt3-1" type="radio" value="yes">
+                                    <label for="alt3-1" class="alternatives-inputs">Sim</label>
+                                    <input name="cybersecurity-event" id="alt3-2" type="radio" value="no">
+                                    <label for="alt3-2" class="alternatives-inputs">Não</label>
+                                </div>
+                            </div>
+
+                            <div class="category-field">
+                                <label>Projete um sistema para proteger uma rede de sensores críticos de invasões externas. Envie um diagrama do sistema.</label>
+                                <label class="file-dropzone" for="file-upload" class="file-label">Insira um arquivo.</label>
+                                <input type="file" id="file-upload" name="file-upload" accept="image/*,application/pdf">
+                            </div>
+                        </div>
+
                     </div>
+                    <div class="form-line">
+                        <img class="globe" src="../static/img/gif2.gif" alt="globe">
 
-                    <div class="category-field">
-                        <label id="objective-label" for="objective">Descreva de forma breve o seu principal objetivo nessa viagem.</label>
-                        <input type="text" id="objective" name="objective" required><br>
-                    </div>
+                        <div class="category-form" id="creativity">
 
-                    <div class="category-field">
-                        <label id="objects-label" for="objects">Escolha um dos objetos para levar com você:</label>
-                        <div id="alternatives">
-                            <label class="alternatives-container">
-                                <input type="radio" name="object-option" value="book">Um livro histórico
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="radio" name="object-option" value="device">Um aparelho tecnológico avançado
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="radio" name="object-option" value="relic">Uma relíquia pessoal
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="radio" name="object-option" value="tool">Uma ferramenta multifuncional
-                            </label>
+                            <div class="category-title">
+                                <h2>criatividade</h2>
+                            </div>
+                            
+                            <div class="category-field">
+                                <label id="compromised-node-label" for="compromised-node">Você descobre que um nó da rede foi comprometido, expondo sensores críticos a invasões. Quais medidas você tomaria?</label>
+                                <textarea spellcheck="false" id="compromised-node" name="compromised-node" rows="4" required></textarea>
+                            </div>
+
+                            <div class="category-field">
+                                <label id="improve-security-label" for="improve-security">Se você pudesse desenvolver qualquer ferramenta para aprimorar a segurança cibernética, qual seria e como funcionaria?</label>
+                                <textarea spellcheck="false" id="improve-security" name="improve-security" rows="4"></textarea>
+                            </div>
+
+                            <div class="category-field">
+                                <label>Quais destes itens você usaria para configurar uma rede segura?</label>
+                                <div id="alternatives">
+                                    <input id="alt4-1" type="radio" name="item-option" value="book">
+                                    <label for="alt4-1" class="alternatives-inputs">Firewall baseado em IA.</label>
+                                    <input id="alt4-2" type="radio" name="item-option" value="device">
+                                    <label for="alt4-2" class="alternatives-inputs">Redes privadas virtuais (VPNs).</label>
+                                    <input id="alt4-3" type="radio" name="item-option" value="relic">
+                                    <label for="alt4-3" class="alternatives-inputs">Segmentação de rede.</label>
+                                    <input id="alt4-4" type="radio" name="item-option" value="tool">
+                                    <label for="alt4-4" class="alternatives-inputs">Sensores de intrusão.</label>
+                                </div>
+                            </div>
+
+                            <div class="category-field">
+                                <label for="real-time-programming" id="real-time-programming-label">Explique como lidaria com uma equipe que tem dificuldade em identificar e corrigir falhas críticas em tempo real.</label>
+                                <textarea spellcheck="false" id="real-time-programming" name="real-time-programming" rows="4" required></textarea>
+                            </div>
+
                         </div>
                     </div>
+                    <button id="submit-button" type="submit">Enviar</button>
 
-                    <div class="category-field">
-                        <label for="yourself" id="yourself-label">Se, na viagem temporal, você encontrasse você mesmo, o que você faria?</label>
-                        <input type="text" id="yourself" name="yourself" required><br>
-                    </div>
-
-                </div>
-
-
-
-                <div class="category-form" id="fitness">
-
-                    <h2 class="category-title">Aptidão</h2>
-
-                    <div class="category-field">
-                        <label id="fitness-label" for="fitness">Você se considera apto para alguma(s) das seguintes categorias?</label>
-                        <div id="alternatives">
-                            <label class="alternatives-container">
-                                <input type="checkbox" name="fitness-option" value="comunication">Comunicação e persuasão</input>
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="checkbox" name="fitness-option" value="engineering">Resolução de problemas mecânicos/tecnológicos</input>
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="checkbox" name="fitness-option" value="physical">Fisicamente apto para atividades intensas</input>
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="checkbox" name="fitness-option" value="cooking">Cozinhar e encontrar comida</input>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="category-field">
-                        <label for="children" id="children-label">Você possui algum filho/dependente?</label>
-                        <div id="alternatives">
-                            <label class="alternatives-container">
-                                <input type="radio" name="children-option" value="yes">Sim</input>
-                            </label>
-                            <label class="alternatives-container">
-                                <input type="radio" name="children-option" value="no">Não</input>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="category-field">
-                        <label for="fear" id="fear-label">Descreva seu maior medo em relação a viajar no tempo.</label>
-                        <input type="text" id="fear" name="fear" required><br>
-                    </div>
-
-                </div>
-        
-                <button id="submit-button" type="submit">Enviar</button>
-
-            </form>
+                </form>
+            </div>
         </div>
-
     </div>
     <script src="../static/js/script.js"></script>
 </body>
